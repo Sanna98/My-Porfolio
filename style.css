@@ -30,15 +30,21 @@ body {
     text-decoration: none;
     font-weight: 600;
     cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
 }
 
 .navbar a {
+    display: inline-block;
     font-size: 18px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
     transition: 0.3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s* var(--i));
 }
 
 .navbar a:hover,
@@ -85,6 +91,7 @@ body {
 
 .home-img img{
     max-width: 450px;
+    margin-right: -20px;
  }
 
  .social-media a{
@@ -114,4 +121,34 @@ body {
     background: #0ef;
     border-radius: 40px;
     box-shadow: 0 0 10px #0ef;
+    font-size: 16px;
+    color: #1f242d;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
  }
+
+/* KEYFRAMES ANIMATION */
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
